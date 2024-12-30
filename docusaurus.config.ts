@@ -45,6 +45,7 @@ const config: Config = {
             outputDir: 'docs/api',   // Directory where the generated docs will go
             sidebarOptions: {
               groupPathsBy: 'tag', // Groups documentation by OpenAPI tags
+              categoryLinkSource: "tag",     // Links category items to their tags
             },
           },
         },
