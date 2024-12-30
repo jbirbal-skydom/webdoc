@@ -30,13 +30,36 @@ const config: Config = {
     defaultLocale: 'en',
     locales: ['en'],
   },
+  themes: ['docusaurus-theme-openapi-docs'],
 
+  plugins: [
+
+    [
+      'docusaurus-plugin-openapi-docs',
+      {
+        id: 'api', // Unique identifier for the plugin instance
+        docsPluginId: 'classic', // Links this plugin to the main docs plugin
+        config: {
+          monolithApi: { // Unique identifier for this API configuration
+            specPath: 'openapi/openapi.yaml', // Path to your OpenAPI spec file
+            outputDir: 'docs/api',   // Directory where the generated docs will go
+            sidebarOptions: {
+              groupPathsBy: 'tag', // Groups documentation by OpenAPI tags
+            },
+          },
+        },
+      },
+    ],
+
+
+  ],
   presets: [
     [
       'classic',
       {
         docs: {
           sidebarPath: './sidebars.ts',
+          docItemComponent: '@theme/ApiItem', // Add this line
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:

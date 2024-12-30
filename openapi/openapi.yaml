@@ -1,0 +1,21 @@
+openapi: 3.1.0
+info:
+  title: Sample API
+  description: API documentation for the Sample project
+  version: 1.0.0
+servers:
+  - url: http://127.0.0.1:8080/api/v3
+paths:
+   /store/inventory:
+    get:
+      summary: Get a list of users
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: integer
+                  format: int32
