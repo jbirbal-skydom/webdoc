@@ -1,4 +1,4 @@
-# Set up
+# Setup
 
 1. Install the docusaurus
     Get the lastest version and install

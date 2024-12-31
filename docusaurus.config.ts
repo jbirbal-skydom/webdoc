@@ -31,6 +31,10 @@ const config: Config = {
     locales: ['en'],
   },
   themes: ['docusaurus-theme-openapi-docs'],
+  stylesheets: [
+    // ... other stylesheets
+    '/src/css/codeapi.css',
+  ],
 
   plugins: [
 
