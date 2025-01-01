@@ -1,0 +1,67 @@
+.editorContainer {
+  border: 1px solid #444;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.editorHeader {
+  background: #333;
+  color: #fff;
+  padding: 5px 10px;
+}
+
+.fileName {
+  font-weight: bold;
+}
+
+.editorBody {
+  position: relative;
+}
+
+.codeEditor {
+  background-color: #1e1e1e;
+  color: #d4d4d4;
+}
+
+.editorFooter {
+  margin-top: 10px;
+}
+
+.runButton {
+  background: #007acc;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.runButton:disabled {
+  background: #555;
+  cursor: not-allowed;
+}
+
+.outputPanel {
+  background: #252526;
+  color: #d4d4d4;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+  border: 1px solid #444;
+}
+
+.outputPanel.error {
+  color: #f44747;
+}
+
+.outputContent {
+  white-space: pre-wrap;
+  font-family: "Fira Code", monospace;
+}
+
+.token.comment { color: #6a9955; }
+.token.keyword { color: #569cd6; }
+.token.string { color: #ce9178; }
+.token.function { color: #dcdcaa; }
+.token.operator { color: #d4d4d4; }
+.token.punctuation { opacity: 0.7; }
