@@ -1,4 +1,4 @@
-# Rust in markdwon example
+# Rust in markdown example
 
 You can integrate Rust examples into your Docusaurus Markdown files using WebAssembly (Wasm). This involves compiling Rust code to WebAssembly, embedding it into your Docusaurus site, and using a JavaScript interface to execute the Wasm code. Here's a step-by-step guide:
 

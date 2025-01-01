@@ -2,7 +2,9 @@
 title: Rust to Wasm Example
 ---
 
-import WasmExample from '@site/src/components/rust/Highlight';
+# Rust Examples
+
+import WasmExample from '@site/src/components/rust/WasmComponentExample';
 
 # Rust to Wasm Example
 
@@ -28,6 +30,7 @@ Let's start with a simple "Hello, World!" program:
 }`
   }}
 />
+
 
 The program above demonstrates the basic structure of a Rust program. Let's break down what each part does:
 
@@ -96,5 +99,37 @@ fn main() {
 }`
   }}
 />
+
+### Generate Image
+
+<CodeAPI
+  sandbox="rust"
+  files={{
+    'main.rs': `use image::{ImageBuffer, Rgb};
+use base64::{encode, write::EncoderStringWriter};
+
+fn generate_base64_picture() -> String {
+    let imgx = 256;
+    let imgy = 256;
+    let mut img = ImageBuffer::new(imgx, imgy);
+
+    for (x, y, pixel) in img.enumerate_pixels_mut() {
+        let r = (x as u8).saturating_add(50);
+        let g = (y as u8).saturating_add(100);
+        let b = 200;
+        *pixel = Rgb([r, g, b]);
+    }
+
+    let mut encoded_image = EncoderStringWriter::new();
+    img.save_with_format(&mut encoded_image, image::ImageFormat::Png).unwrap();
+
+    encode(encoded_image.into_inner())
+}
+
+generate_base64_picture();
+`
+  }}
+/>
+
 
 Each example above is interactive - you can modify the code and run it directly in your browser!
