@@ -33,7 +33,6 @@ const config: Config = {
   themes: ['docusaurus-theme-openapi-docs'],
   stylesheets: [
     // ... other stylesheets
-    '/src/css/codeapi.css',
   ],
 
   plugins: [
