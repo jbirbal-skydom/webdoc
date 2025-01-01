@@ -17,6 +17,7 @@ const CodeAPI = ({ sandbox = "rust", files = {}, initialCode = "" }) => {
   const [output, setOutput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [imageSrc, setImageSrc] = useState(null); // State for storing the image source
   const prismDarkCSS = `
   .token.comment { color: #6a9955; }
   .token.keyword { color: #569cd6; }
@@ -29,6 +30,7 @@ const CodeAPI = ({ sandbox = "rust", files = {}, initialCode = "" }) => {
     setIsLoading(true);
     setError(null);
     setOutput("");
+    setImageSrc(null); // Reset the image source
 
     try {
       const response = await fetch("http://localhost:1313/v1/exec", {
@@ -50,7 +52,12 @@ const CodeAPI = ({ sandbox = "rust", files = {}, initialCode = "" }) => {
       if (!data.ok) {
         setError(data.stderr || "Execution failed");
       } else {
+        const stdout = data.stdout.trim();
         setOutput(data.stdout);
+        // Check if output contains Base64 image data
+        if (stdout.startsWith("data:image/png;base64,")) {
+          setImageSrc(stdout); // Update image source
+        }
       }
     } catch (err) {
       setError(err.message);
@@ -93,12 +100,17 @@ const CodeAPI = ({ sandbox = "rust", files = {}, initialCode = "" }) => {
             </button>
           </div>
       
-          {(output || error) && (
+          {(output || error || imageSrc) && (
             <div className={styles.outputPanel}>
               <div className={styles.outputHeader}>Output</div>
               <div className={`${styles.outputContent} ${error ? styles.error : ''}`}>
                 {error || output}
               </div>
+              {imageSrc && (
+            <div className={styles.imagePreview}>
+              <img src={imageSrc} alt="Generated" />
+            </div>
+          )}
             </div>
           )}
         </div>
