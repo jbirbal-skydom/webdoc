@@ -82,6 +82,7 @@ const CodeAPI = ({ sandbox = "rust", files = {}, initialCode = "" }) => {
                 fontFamily: '"Fira code", "Fira Mono", monospace',
                 fontSize: 14,
                 outline: 0, // Removed inline background and text colors to let CSS handle it
+                lineHeight: 1.5,
               }}
             />
           </div>

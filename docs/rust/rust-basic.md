@@ -1,24 +1,24 @@
 ---
-title: Rust to Wasm Example
+title: Rust integration
 ---
 
 # Rust Examples
 
 import WasmExample from '@site/src/components/rust/WasmComponentExample';
 
-# Rust to Wasm Example
+## Rust to Wasm Example
 
 This is an example of integrating Rust with WebAssembly.
 
 <WasmExample />
 
-# Interactive Rust Tutorial
+## CodAPI
 
 import CodeAPI from '@site/src/components/rust/CodeAPI';
 
 Welcome to our interactive Rust tutorial! This page demonstrates how to use Rust with live code examples.
 
-## Your First Rust Program
+### Your First Rust Program
 
 Let's start with a simple "Hello, World!" program:
 
@@ -37,7 +37,7 @@ The program above demonstrates the basic structure of a Rust program. Let's brea
 1. `fn main()` - This declares the main function, the entry point of our program
 2. `println!` - This is a macro that prints text to the console
 
-## Working with Variables
+### Working with Variables
 
 Here's an example showing how to work with variables in Rust:
 
@@ -53,7 +53,7 @@ Here's an example showing how to work with variables in Rust:
   }}
 />
 
-## Functions in Rust
+### Functions in Rust
 
 Let's explore how functions work in Rust:
 
@@ -71,7 +71,7 @@ fn main() {
   }}
 />
 
-## Error Handling Example
+### Error Handling Example
 
 Here's how to handle potential errors in Rust:
 
@@ -91,7 +91,7 @@ fn main() {
         Ok(result) => println!("10 / 2 = {}", result),
         Err(e) => println!("Error: {}", e),
     }
-    
+
     match divide(10.0, 0.0) {
         Ok(result) => println!("10 / 0 = {}", result),
         Err(e) => println!("Error: {}", e),
