@@ -33,7 +33,7 @@ const CodeAPI = ({ sandbox = "rust", files = {}, initialCode = "" }) => {
     setImageSrc(null); // Reset the image source
 
     try {
-      const response = await fetch("http://localhost:1313/v1/exec", {
+      const response = await fetch("http://10.0.0.34:1313/v1/exec", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -107,10 +107,10 @@ const CodeAPI = ({ sandbox = "rust", files = {}, initialCode = "" }) => {
                 {error || output}
               </div>
               {imageSrc && (
-            <div className={styles.imagePreview}>
-              <img src={imageSrc} alt="Generated" />
-            </div>
-          )}
+                <div className={styles.imagePreview}>
+                  <img src={imageSrc} alt="Generated" />
+                </div>
+              )}
             </div>
           )}
         </div>
