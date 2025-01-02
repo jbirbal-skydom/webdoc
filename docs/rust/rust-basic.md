@@ -1,8 +1,9 @@
 ---
 title: Rust integration
 ---
+<!-- markdownlint-disable-file MD033 -->
 
-# Rust Examples
+## Rust Examples
 
 import WasmExample from '@site/src/components/rust/WasmComponentExample';
 
@@ -30,7 +31,6 @@ Let's start with a simple "Hello, World!" program:
 }`
   }}
 />
-
 
 The program above demonstrates the basic structure of a Rust program. Let's break down what each part does:
 
